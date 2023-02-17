@@ -1,0 +1,34 @@
+.item-detail {
+    width: 30vw;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: ease;
+}
+
+.active-content > div  {
+    font-weight: normal;
+    color: black;
+    opacity: 0.65;
+}
+
+.active-content div > div > span {
+    font-weight: lighter;
+    color: black;
+    margin-left: 8px;
+}
