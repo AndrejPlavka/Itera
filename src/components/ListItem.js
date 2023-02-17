@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import "./ListItem.css";
 
-const ListItem = ({id, name, department, data, isActive}) => { 
+const ListItem = ({id, name, department, data}) => { 
     const [detailId, setDetailId] = useState(null)
     const [isVisible, setIsVisible] = useState(false)
 
     const handleClick = (id) => {
         setDetailId(id)
         setIsVisible(p => !p)
-        isActive(true)
     }
     
     const detailItem = detailId
