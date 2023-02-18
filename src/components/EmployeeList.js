@@ -20,6 +20,11 @@ const EmployeeList = ({employees, departments}) => {
                 </tr>
                 </thead>
                 <tbody>
+                    <ul>
+                        <li>Apple</li>
+                        <li>Banna</li>
+                        <li>Orange</li>
+                    </ul>
                     {employees.map((employee) => 
                         <tr key={employee.id}>
                             <ListItem 

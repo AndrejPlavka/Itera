@@ -1,8 +1,8 @@
-import axios from "axios";
 import React, { useEffect, useState, useMemo } from 'react';
-import './App.css';
 import DepartmentFilter from "./components/DepartmentFilter";
 import EmployeeList from "./components/EmployeeList";
+import axios from "axios";
+import './App.css';
 
 function App() {
     const [employees, setEmployees] = useState([]);
