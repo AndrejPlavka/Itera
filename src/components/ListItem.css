@@ -8,7 +8,7 @@
   }
   
 .translate {
-  animation: 0.3s ease-in-out 1 translate; /* Do the Fade. */
+  animation: 0.3s ease-in-out 1 translate;
 }
 
 .item-detail {
