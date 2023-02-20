@@ -1,34 +1,50 @@
-.item-detail {
-    width: 30vw;
+@keyframes translate {
+    from {
+      height: 0;
+    }
+    to {
+      height: 70px;
+    }
+  }
+  
+.translate {
+  animation: 0.3s ease-in-out 1 translate; /* Do the Fade. */
 }
 
-.wrapper {
+.item-detail {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 30vw;
 }
 
-.title-wrapper {
-    display: flex;
-    flex-direction: row;
-}
-
-.content > div {
+ul {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
-    transition: ease;
+    justify-content: center;
+    height: 70px;
+    margin: 0px;
+    padding-left: 10vw;
+    transition: height 0.3s ease-in-out 0.1s;
+    list-style: none;
+    overflow: hidden;
 }
 
-.active-content > div  {
+li {
+    color: rgb(126, 123, 123);
     font-weight: normal;
-    color: black;
-    opacity: 0.65;
 }
 
-.active-content div > div > span {
+span {
+    margin-left: 4px;
+    color: rgb(161, 159, 159);
     font-weight: lighter;
-    color: black;
-    margin-left: 8px;
 }
+
+.hidden {
+    height: 0px;
+}
+
+  

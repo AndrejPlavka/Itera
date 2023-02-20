@@ -1,44 +1,41 @@
 import React, { useState } from 'react';
-import "./ListItem.css";
+import './ListItem.css';
 
-const ListItem = ({id, name, department, data}) => { 
-    const [detailId, setDetailId] = useState(null)
-    const [isVisible, setIsVisible] = useState(false)
+const ListItem = ({ id, name, department, data }) => {
+  const [detailId, setDetailId] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  console.log(isVisible);
+  const handleClick = (id) => {
+    setDetailId(id);
+    setIsVisible((p) => !p);
+  };
 
-    const handleClick = (id) => {
-        setDetailId(id)
-        setIsVisible(p => !p)
-    }
-    
-    const detailItem = detailId
-        ? (data
-        .filter((employee) => employee.id === detailId)
-        .map((item, index) => 
-            <div key={index}>
-                <div>age: <span>{item.age} years</span></div>
-                <div>start of empl: <span>{item.startDate}</span></div>
-                <div>end of empl: <span>{item.endDate?? "employed"}</span></div>
-            </div>)) 
-        : null;
+  const detailItem = data
+    .filter((employee) => employee.id === detailId)
+    .map((item, index) => (
+      <ul key={index} className={isVisible && id === detailId ? 'translate' : 'translate hidden'}>
+        <li>
+          age: <span>{item.age} years</span>
+        </li>
+        <li>
+          start of empl: <span>{item.startDate}</span>
+        </li>
+        <li>
+          end of empl: <span>{item.endDate ?? 'employed'}</span>
+        </li>
+      </ul>
+    ));
 
-    return(
-        <>
-            <td>{id}</td>
-            <td className="item-detail" onClick={() => handleClick(id)}>
-                <div className="wrapper">
-                    <div className="title-wrapper">
-                        <div className="title">{name}</div>
-                    </div>
-                    <div 
-                        className={isVisible? "content active-content" : "content" }
-                    >
-                        {isVisible && id === detailId ? detailItem : null}
-                    </div>
-                </div>
-            </td>
-            <td>{department}</td>
-        </>
-    )
+  return (
+    <>
+      <td>{id}</td>
+      <td className="item-detail" onClick={() => handleClick(id)}>
+        {name}
+        {detailItem}
+      </td>
+      <td>{department}</td>
+    </>
+  );
 };
 
 export default ListItem;

@@ -16,15 +16,40 @@
     },
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
+            "arrowFunctions": true,
+            "blockBindings": true,
+            "classes": true,
+            "defaultParams": true,
+            "modules": true,
+            "spread": true,
+            "globalReturn": true
         },
-        "ecmaVersion": 2018,
+        "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "sort-imports-es6-autofix",
+        "prettier"
     ],
+    "max-len": "off",
+    "new-parens": "error",
+    "no-bitwise": "error",
+    "no-caller": "error",
+    "eslint-disable-next-line": 0,
+    "quote-props": ["error", "as-needed"],
     "rules": {
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "sort-imports-es6-autofix/sort-imports-es6": [2, {
+            "ignoreCase": false,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+          }],
+          "no-irregular-whitespace": "warn",
+    "react-hooks/exhaustive-deps": 0,
+    "react/display-name": 0,
+    "react/jsx-uses-react": "off"
+        
     }
 }
